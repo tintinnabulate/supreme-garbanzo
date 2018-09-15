@@ -2,6 +2,8 @@ package main
 
 import (
 	"io/ioutil"
+
+	"github.com/tintinnabulate/supreme-garbanzo/generators"
 )
 
 func check(e error) {
@@ -11,6 +13,7 @@ func check(e error) {
 }
 
 func main() {
+	generators.Run()
 	jsonByteArray, err := ioutil.ReadFile("settings.json")
 	check(err)
 	settings := GetSettings(jsonByteArray)
